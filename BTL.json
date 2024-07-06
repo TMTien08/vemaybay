@@ -1,0 +1,277 @@
+{
+  "vemaybay": [
+    {
+      "tenchuyen": "OB31",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://cdn.tuoitre.vn/thumb_w/730/471584752817336320/2023/6/26/ha-noi-1687779226327878086526.jpg",
+      "id": "cb4d"
+    },
+    {
+      "tenchuyen": "OB38",
+      "chieu": "0",
+      "diemdi": "Đà Nẵng",
+      "diemden": "Phú Thọ",
+      "soghe": "45",
+      "ngaydi": "2024-06-16T19:38",
+      "ngayve": "",
+      "hinhanh": "https://sakos.vn/wp-content/uploads/2023/04/doi-che-long-coc.jpg",
+      "id": "28e9"
+    },
+    {
+      "tenchuyen": "AK47",
+      "chieu": "0",
+      "diemdi": "Hà Nội",
+      "diemden": "Đà Nẵng",
+      "soghe": "100",
+      "ngaydi": "2024-06-21T21:44",
+      "ngayve": "",
+      "hinhanh": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/B%E1%BB%9D_%C4%91%C3%B4ng_c%E1%BA%A7u_R%E1%BB%93ng.jpg/431px-B%E1%BB%9D_%C4%91%C3%B4ng_c%E1%BA%A7u_R%E1%BB%93ng.jpg",
+      "id": "4f64"
+    },
+    {
+      "tenchuyen": "OBB6",
+      "chieu": "1",
+      "diemdi": "Đà Lạt",
+      "diemden": "Hồ Chí Minh",
+      "soghe": "100",
+      "ngaydi": "2024-11-10T17:40",
+      "ngayve": "2024-11-23T17:40",
+      "hinhanh": "https://media-cdn-v2.laodong.vn/storage/newsportal/2020/4/28/801886/1-5.jpg?w=660",
+      "id": "08b4"
+    },
+    {
+      "tenchuyen": "OT87",
+      "chieu": "0",
+      "diemdi": "Đồng Tháp",
+      "diemden": "Hà Nội",
+      "soghe": "95",
+      "ngaydi": "2024-09-07T17:41",
+      "ngayve": "",
+      "hinhanh": "https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2023/7/1/sanbaynoibainhintutrencao-anhnia-ndah-2539-16810400452751987588357-16881760875491140216425.jpeg",
+      "id": "08b1"
+    },
+    {
+      "tenchuyen": "OP45",
+      "chieu": "0",
+      "diemdi": "Phú Thọ",
+      "diemden": "Thừa Thiên Huế",
+      "soghe": "100",
+      "ngaydi": "2024-11-02T04:30",
+      "ngayve": "",
+      "hinhanh": "https://file1.dangcongsan.vn/data/0/images/2024/04/11/upload_673/hue-imperial-gate-1024x683-754-17016811818591749547652.png?dpi=150&quality=100&w=800",
+      "id": "08b2"
+    },
+    {
+      "tenchuyen": "OP46",
+      "chieu": "1",
+      "diemdi": "Vĩnh Phúc",
+      "diemden": "Bắc Kạn",
+      "soghe": "100",
+      "ngaydi": "2024-06-20T17:42",
+      "ngayve": "2024-06-22T18:46",
+      "hinhanh": "https://bcp.cdnchinhphu.vn/thumb_w/777/334894974524682240/2023/11/3/bk-16990086198432115752853.jpg",
+      "id": "08b3"
+    },
+    {
+      "tenchuyen": "OB33",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "67",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/3/19/1159475/Sapa2.jpg",
+      "id": "2e4e"
+    },
+    {
+      "tenchuyen": "ON90",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://images.baodantoc.vn/uploads/2022/Th%C3%A1ng%204/Ng%C3%A0y_28/Anh/untitled%20folder/3_Hand_Luggage_Only.jpg"
+    },
+    {
+      "tenchuyen": "ON32",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://dulichviet.com.vn/images/bandidau/suoi-nuoc-nong-yunishigawa.jpg"
+    },
+    {
+      "tenchuyen": "OBO2",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://i1-dulich.vnecdn.net/2022/04/28/VinhHY-4711-1651120272.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=cFTJR6qMO0UCRrJYFJ1QfA"
+    },
+    {
+      "tenchuyen": "NM89",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://pystravel.vn/uploads/posts/albums/3131/32ca26b788383fe94aa9d943dc59935f.jpg"
+    },
+    {
+      "tenchuyen": "YU7",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://aivivu.com/wp-content/uploads/2021/02/Thac-Niagara-noi-tieng-o-My_aivivu.webp"
+    },
+    {
+      "tenchuyen": "RF4",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://file3.qdnd.vn/data/images/0/2023/03/28/tranthaiphuong/dulich4.jpg?dpi=150&quality=100&w=870"
+    },
+    {
+      "tenchuyen": "OI09",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://file3.qdnd.vn/data/images/0/2023/03/28/tranthaiphuong/dulich3.jpg?dpi=150&quality=100&w=870"
+    },
+    {
+      "tenchuyen": "ORF56",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://gonatour.vn/vnt_upload/news/04_2020/du_lich_bien_ho_tram_gonatour.jpg"
+    },
+    {
+      "tenchuyen": "OGH2",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://gonatour.vn/vnt_upload/news/04_2020/du_lich_da_lat_ho_tuyen_lam_gonatour.jpg"
+    },
+    {
+      "tenchuyen": "OY32",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://gonatour.vn/vnt_upload/news/08_2020/du_lich_tam_dao.jpg"
+    },
+    {
+      "tenchuyen": "OI32",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://gonatour.vn/vnt_upload/news/04_2020/ruong_bac_thang_sapa_mien_bac_gonatour.jpg"
+    },
+    {
+      "tenchuyen": "OE32",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://gonatour.vn/vnt_upload/news/04_2020/du_lich_mien_bac_gonatour.jpg"
+    },
+    {
+      "tenchuyen": "OC32",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/3/19/1159475/1536-1024.jpg"
+    },
+    {
+      "tenchuyen": "OU32",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/3/19/1159475/Du-Lich-Hue-12.jpg"
+    },
+    {
+      "tenchuyen": "OK92",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/3/19/1159475/Dsc07240.jpg"
+    },
+    {
+      "tenchuyen": "GT62",
+      "chieu": "0",
+      "diemdi": "Hồ Chí Minh",
+      "diemden": "Hà Nội",
+      "soghe": "80",
+      "ngaydi": "2024-06-07T17:05",
+      "ngayve": "",
+      "hinhanh": "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/3/19/1159475/1C72DE29-E5A1-4425-9.jpeg"
+    }
+  ],
+  "vemaybay2": [
+    {
+      "id": "25e3",
+      "tenchuyen": "OB38",
+      "chieu": "0",
+      "diemdi": "Đà Nẵng",
+      "diemden": "Phú Thọ",
+      "ngaydi": "2024-06-16T19:38",
+      "ngayve": null,
+      "loaive": "Phổ thông",
+      "hinhanh": "https://sakos.vn/wp-content/uploads/2023/04/doi-che-long-coc.jpg",
+      "cccd": "123456789009"
+    }
+  ],
+  "nguoidung": [
+    {
+      "id": "fa69",
+      "hoten": "nam",
+      "cccd": "123456789009",
+      "gioitinh": "nam",
+      "sodt": "0123456789",
+      "email": "npnam2k4ngoxa@gmail.com",
+      "hangghe": "Thương gia"
+    }
+  ]
+}

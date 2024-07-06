@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>HNT End Like</title>
+    <style>
+        #menu {
+            background-color: rgb(31, 9, 62);
+             border-radius: 5px;
+             padding: 12px;
+        }
+        #menu a {
+            color: rgb(7, 36, 255);
+            text-align: center;
+            padding: 12px 14px;
+            text-decoration: none;
+            border: 1px solid rgb(7, 36, 255);
+            border-radius: 6px;
+            box-shadow: 1px 1px 6px rgb(7, 36, 255);
+            margin: 5px;
+        }
+        a:hover {
+            background-color: black;
+        }
+        #de {
+            font-size:15px;
+            font-family:cursive;
+            color: rgb(96, 96, 102);
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            background-color:#41b9e6;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: rgb(15, 100, 114);
+            border: 3px solid #E6B441;
+        }
+        </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div id="menu" class="col-md-9 col-12 d-flex flex-row flex-wrap mx-auto">
+                 <a href="tranhchu.html">Trang chủ</a>
+                 <a href="timve.html">Tìm vé</a>
+                 <a id="ql">Quản lý</a>
+                 <a href="vedadat.html">Thông tin vé đã đặt</a>
+        </div>
+    </div>
+    <div class="row">
+        <div id="de" class="col-md-9 col-12 d-flex flex-row flex-wrap mx-auto">
+            HNT End Like >> Đặt vé
+        </div>
+    </div>
+    <div class="bg-white p-4 rounded shadow mt-5 mx-auto" style="max-width: 600px;">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h1 class="text-dark">Vé Máy Bay</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div id="ticketInfo" class="ve fs-5"></div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12 text-primary fs-4 fw-bold text-center mb-4">Thông Tin Khách Hàng</div>
+        </div>
+        <div class="row mb-3 align-items-center">
+            <label for="hoten" class="col-4 col-sm-4 col-form-label fs-5"><strong>Tên Khách Hàng:</strong></label>
+            <div class="col-8 col-sm-8">
+                <input type="text" id="hoten" name="hoten" class="form-control"/>
+                <span id="loitenkh" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="row mb-3 align-items-center">
+            <label for="cccd" class="col-4 col-sm-4 col-form-label fs-5"><strong>Số CCCD:</strong></label>
+            <div class="col-8 col-sm-8">
+                <input type="text" id="cccd" name="cccd" class="form-control"/>
+                <span id="loicccd" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="row mb-3 align-items-center">
+            <label class="col-4 col-sm-4 col-form-label fs-5"><strong>Giới Tính:</strong></label>
+            <div class="col-8 col-sm-8 d-flex align-items-center">
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="gioitinh_nam" name="gioitinh" value="nam" class="form-check-input">
+                    <label for="gioitinh_nam" class="form-check-label">Nam</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="gioitinh_nu" name="gioitinh" value="nu" class="form-check-input">
+                    <label for="gioitinh_nu" class="form-check-label">Nữ</label>
+                </div>
+                <span id="loigioitinh" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="row mb-3 align-items-center">
+            <label for="sodt" class="col-4 col-sm-4 col-form-label fs-5"><strong>Số Điện Thoại :</strong></label>
+            <div class="col-8 col-sm-8">
+                <input type="text" id="sodt" name="sodt" class="form-control"/>
+                <span id="loisodt" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="row mb-3 align-items-center">
+            <label for="email" class="col-4 col-sm-4 col-form-label fs-5"><strong>Email :</strong></label>
+            <div class="col-8 col-sm-8">
+                <input type="email" id="email" name="email" class="form-control"/>
+                <span id="loiemail" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <div class="row mb-3 align-items-center">
+            <label for="hangghe" class="col-4 col-sm-4 col-form-label fs-5"><strong>Hạng Ghế:</strong></label>
+            <div class="col-8 col-sm-8">
+                <select id="hangghe" name="hangghe" class="form-select">
+                    <option value="thuonggia">Phổ Thông</option>
+                    <option value="phothong">Thương Gia</option>
+                    <option value="binhdan">Hạng Nhất</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12 text-center">
+                <button onclick="datcho()"><a id="aaa" style="text-decoration: none;" href="#">Đặt Chỗ</a></button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-12 p-0" style="height: 100px;">
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#ql').click(function() {
+                var mk = prompt('hay nhap mat khau cho quan tri vien!');
+                if (mk=='namhuytien') {
+                    window.location.href = 'btl3.html';
+                }
+                else {
+                    alert('rat tiec ban truy cap khong thanh cong!')
+                }
+            });
+        var urlParams = new URLSearchParams(window.location.search);
+        var idVe = urlParams.get('id');
+
+        if (idVe) {
+            $.get("http://localhost:3000/vemaybay/" + idVe, function(data, status) {
+                if (status === "success" && data) {
+                    var veHTML = '<p><strong>Chuyến bay:</strong> ' + data.tenchuyen + '</p>';
+                    veHTML += '<p><strong>Chiều:</strong> ' + (data.chieu === "1" ? 'Khứ hồi' : 'Một chiều') + '</p>';
+                    veHTML += '<p><strong>Điểm đi:</strong> ' + data.diemdi + '</p>';
+                    veHTML += '<p><strong>Điểm đến:</strong> ' + data.diemden + '</p>';
+                    veHTML += '<p><strong>Ngày đi:</strong> ' + data.ngaydi + '</p>';
+                    if (data.chieu === "1") {
+                        veHTML += '<p><strong>Ngày về:</strong> ' + data.ngayve + '</p>';
+                    }
+                    var hinhanh = data.hinhanh;
+                    $('#ticketInfo').append(veHTML);
+                    $('#ticketInfo').data('hinhanh', hinhanh); 
+                } else {
+                    $('#ticketInfo').append('<p>Không tìm thấy thông tin vé.</p>');
+                }
+            }).fail(function() {
+                $('#ticketInfo').append('<p>Đã xảy ra lỗi khi tải thông tin vé.</p>');
+            });
+        } else {
+            $('#ticketInfo').append('<p>ID vé không được cung cấp.</p>');
+        }
+    });
+
+    function datcho() {
+        var hoten = $('#hoten').val();
+        var cccd = $('#cccd').val();
+        var gioitinh = $('input[name="gioitinh"]:checked').val();
+        var sodt = $('#sodt').val();
+        var email = $('#email').val();
+        var hangghe = $('#hangghe').val();
+
+        var hotenErr = $('#loitenkh');
+        var cccdErr = $('#loicccd');
+        var gioitinhErr = $('#loigioitinh');
+        var sodtErr = $('#loisodt');
+        var emailErr = $('#loiemail');
+
+        var isValid = true;
+
+        hotenErr.text('');
+        cccdErr.text('');
+        gioitinhErr.text('');
+        sodtErr.text('');
+        emailErr.text('');
+
+        function containsViolentWords(str) {
+            var violentWords = ["kill", "murder", "fight"];
+            for (var i = 0; i < violentWords.length; i++) {
+                if (str.toLowerCase().includes(violentWords[i])) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function validateEmail(email) {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        if (hoten === '') {
+            hotenErr.text('Họ tên không được để trống');
+            isValid = false;
+        } else if (hoten.length > 512) {
+            hotenErr.text('Tên của bạn quá dài');
+            isValid = false;
+        } else if (containsViolentWords(hoten)) {
+            hotenErr.text('Họ tên không được chứa từ ngữ bạo lực');
+            isValid = false;
+        }
+
+        if (cccd === '') {
+            cccdErr.text('Vui lòng nhập số căn cước công dân');
+            isValid = false;
+        } else if (cccd.length !== 12) {
+            cccdErr.text('Bạn nhập sai số căn cước');
+            isValid = false;
+        } else if (/[^0-9]/.test(cccd)) {
+            cccdErr.text('Số căn cước không có chữ cái!');
+            isValid = false;
+        }
+
+        $.get("http://localhost:3000/vemaybay2", function(data, status) {
+            var duplicateCCCD = false;
+            data.forEach(function(item) {
+                if (cccd === item.cccd && $('#ticketInfo p').eq(0).text().split(': ')[1] === item.tenchuyen) {
+                    duplicateCCCD = true;
+                }
+            });
+            if (duplicateCCCD) {
+                cccdErr.text('Số CCCD đã đăng kí chuyến bay này!');
+                isValid = false;
+            } else {
+                if (!gioitinh) {
+                    gioitinhErr.text('Vui lòng chọn giới tính');
+                    isValid = false;
+                }
+
+                if (email === '') {
+                    emailErr.text('Email không được để trống');
+                    isValid = false;
+                } else if (!validateEmail(email)) {
+                    emailErr.text('Email không hợp lệ');
+                    isValid = false;
+                }
+
+                if (sodt === '') {
+                    sodtErr.text('Điện thoại không được để trống');
+                    isValid = false;
+                } else if (sodt.length !== 10) {
+                    sodtErr.text('Bạn nhập sai số điện thoại');
+                    isValid = false;
+                } else if (/[^0-9]/.test(sodt)) {
+                    sodtErr.text('Số điện thoại không có chữ cái!');
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    var userData = {
+                        hoten: hoten,
+                        cccd: cccd,
+                        gioitinh: gioitinh,
+                        sodt: sodt,
+                        email: email,  
+                        hangghe: hangghe,
+                    };
+
+                    $.ajax({
+                        url: 'http://localhost:3000/nguoidung',
+                        type: 'POST',
+                        data: JSON.stringify(userData),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function(response) {
+                            alert('Bạn đã đặt vé thành công!');
+                            console.log(response);
+                        },
+                        error: function(xhr, status, error) {
+                            alert('Có lỗi xảy ra. Vui lòng thử lại.');
+                            console.log(xhr.responseText);
+                        }
+                    });
+
+                    var veData = {
+                        tenchuyen: $('#ticketInfo p').eq(0).text().split(': ')[1],
+                        chieu: ($('#ticketInfo p').eq(1).text().split(': ')[1] === 'Khứ hồi') ? "1" : "0",
+                        diemdi: $('#ticketInfo p').eq(2).text().split(': ')[1],
+                        diemden: $('#ticketInfo p').eq(3).text().split(': ')[1],
+                        ngaydi: $('#ticketInfo p').eq(4).text().split(': ')[1],
+                        ngayve: ($('#ticketInfo p').length > 5) ? $('#ticketInfo p').eq(5).text().split(': ')[1] : null,
+                        loaive: $('#hangghe').val(),
+                        hinhanh: $('#ticketInfo').data('hinhanh'),
+                        cccd: cccd
+                    };
+
+                    $.ajax({
+                        url: 'http://localhost:3000/vemaybay2',
+                        type: 'POST',
+                        data: JSON.stringify(veData),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function(response) {
+                            console.log('Data sent successfully:', response);
+                            window.location.href = 'vedadat.html';
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error sending data:', xhr.responseText);
+                        }
+                    });
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

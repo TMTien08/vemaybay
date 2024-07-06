@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>HNT End Like</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #menu {
+            background-color: rgb(31, 9, 62);
+             border-radius: 5px;
+             padding: 12px;
+        }
+        #menu a {
+            color: rgb(7, 36, 255);
+            text-align: center;
+            padding: 12px 14px;
+            text-decoration: none;
+            border: 1px solid rgb(7, 36, 255);
+            border-radius: 6px;
+            box-shadow: 1px 1px 6px rgb(7, 36, 255);
+            margin: 5px;
+        }
+        a:hover {
+            background-color: black;
+        }
+        #de {
+            font-size:15px;
+            font-family:cursive;
+            color: rgb(96, 96, 102);
+        }
+        #divNgayVe {
+            display: none;
+        }
+        .co{
+            max-width: 500px;
+            min-width: 300px;
+        }
+        .co2{
+            max-width: 1500px;
+            min-width: 300px;
+        }
+        .link-anh {
+            word-break: break-all;
+            overflow: hidden;
+            max-width: 100%;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body class="container">
+    <div class="row">
+        <div id="menu" class="col-md-9 col-12 d-flex flex-row flex-wrap mx-auto">
+                 <a href="tranhchu.html">Trang chủ</a>
+                 <a href="timve.html">Tìm vé</a>
+                 <a href="btl3.html">Quản lý</a>
+                 <a href="vedadat.html">Thông tin vé đã đặt</a>
+        </div>
+    </div>
+    <div class="row">
+        <div id="de" class="col-md-9 col-12 d-flex flex-row flex-wrap mx-auto">
+            HNT End Like >> Quản lý
+        </div>
+    </div>
+    <div class="co mx-auto border border-secondary mt-2 p-5 rounded mb-2">
+        <div class="mt-2">
+            <div class="row align-items-center">
+                <div class="col-md-4 col-4"><label for="tenchuyen">Tên chuyến:</label></div>
+                <div class="col-md-8 col-8"><input class="form-control" type="text" id="tenchuyen" name="tenchuyen"/></div>
+            </div>
+            <div class="row mt-2 align-items-center">
+                <div class="col-md-4 col-4"><label for="chieu">Chiều:</label></div>
+                <div class="col-md-8 col-8"><select  id="chieu" name="chieu">
+                    <option value="0">Một chiều</option>
+                    <option value="1">Khứ hồi</option>
+                </select></div>
+            </div>
+            <div class="row mt-2 align-items-center">
+                <div class="col-md-4 col-4"><label for="diemdi">Điểm đi:</label></div>
+                <div class="col-md-8 col-8"><input class="form-control" type="text" id="diemdi" name="diemdi"/></div>
+            </div>
+            <div class="row mt-2 align-items-center">
+                <div class="col-md-4 col-4"><label for="diemden">Điểm đến:</label></div>
+                <div class="col-md-8 col-8"><input class="form-control" type="text" id="diemden" name="diemden"/></div>
+            </div>
+            <div class="row mt-2 align-items-center">
+                <div class="col-md-4 col-4"><label for="soghe">Số ghế trống:</label></div>
+                <div class="col-md-8 col-8"><input class="form-control" type="text" id="soghe" name="soghe"/></div>
+            </div>
+            <div class="row mt-2 align-items-center">
+                <div class="col-md-4 col-4"><label for="ngaydi">Ngày đi:</label></div>
+                <div class="col-md-8 col-8"><input class="form-control" type="datetime-local" id="ngaydi" name="ngaydi"/></div>
+            </div>
+            <div id="divNgayVe">
+                <div class=" row mt-2 align-items-center">
+                    <div class="col-md-4 col-4" ><label for="ngayve">Ngày về:</label></div>
+                    <div class="col-md-8 col-8" ><input class="form-control" type="datetime-local" id="ngayve" name="ngayve"/></div>
+                </div>
+            </div>
+            <div class="row mt-2 align-items-center">
+                <div class="col-md-4 col-4"><label for="hinhanh">Link ảnh:</label></div>
+                <div class="col-md-8 col-8"><input class="form-control" type="text" id="hinhanh" name="hinhanh"/></div>
+            </div>
+        </div>
+        <div class="col-md-5 mx-auto mt-5 col-5"><button type="button" class="btn btn-primary col-md-12 col-12" id="btnGui">Đăng tin</button></div>
+    </div>
+    <table class="mx-auto co2" id="danhSachChuyenBay"></table>
+    <div class="row">
+        <div class="col-md-12 col-12 p-0" style="height: 100px;">
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            taiDanhSachChuyenBay();
+
+            $('#chieu').change(function() {
+                var chieu = $(this).val();
+                if (chieu === "1") {
+                    $('#divNgayVe').show();
+                } else {
+                    $('#divNgayVe').hide();
+                    $('#ngayve').val('');
+                }
+            });
+
+            $('#btnGui').click(function() {
+                var tenchuyen = $('#tenchuyen').val();
+                var chieu = $('#chieu').val();
+                var diemdi = $('#diemdi').val();
+                var diemden = $('#diemden').val();
+                var ngaydi = $('#ngaydi').val();
+                var ngayve = $('#ngayve').val();
+                var soghe = $('#soghe').val();
+                var hinhanh = $('#hinhanh').val();
+                if ( !diemdi || !diemden || !soghe || !ngaydi || !tenchuyen) {
+                    alert('Vui lòng nhập đầy đủ thông tin.');
+                    return;
+                }
+                if (isNaN(soghe) || soghe <= 0) {
+                    alert('Số ghế phải là số tự nhiên lớn hơn 0.');
+                    return;
+                }
+                if (chieu === "1" && ngayve < ngaydi) {
+                    alert('Ngày về không được trước ngày đi.');
+                    return;
+                }
+                if (chieu === "0" && ngayve !== "") {
+                    alert('Không thể chọn ngày về khi là một chiều.');
+                    return;
+                }
+
+                var data = {
+                    tenchuyen: tenchuyen,
+                    chieu: chieu,
+                    diemdi: diemdi,
+                    diemden: diemden,
+                    soghe: soghe,
+                    ngaydi: ngaydi,
+                    ngayve: ngayve,
+                    hinhanh: hinhanh
+                };
+
+                $.ajax({
+                    url: 'http://localhost:3000/vemaybay',
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(response) {
+                        taiDanhSachChuyenBay();
+                        datLaiForm();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Lỗi:', error);
+                        alert('Đã xảy ra lỗi khi đăng tin chuyến bay.');
+                    }
+                });
+            });
+        });
+
+        function taiDanhSachChuyenBay() {
+            $('#danhSachChuyenBay').empty();
+            $.get("http://localhost:3000/vemaybay", function(data, status){
+                data.forEach(function(chuyenbay) {
+                    var item = '<div class="row border border-secondary rounded m-1 mt-3">' + 
+                        '<div class="mx-auto row col-md-10 col-12">'+ 
+                        '<strong class="col-md-3 col-5">Tên chuyến:</strong> ' + '<div class="col-md-9 col-7">' + chuyenbay.tenchuyen + '</div>' +
+                        '<strong class="col-md-3 col-5">Chiều:</strong> ' + '<div class="col-md-9 col-7">' + (chuyenbay.chieu === "1" ? 'Khứ hồi' : 'Một chiều') + '</div>' +
+                        '<strong class="col-md-3 col-5">Điểm đi:</strong> ' + '<div class="col-md-9 col-7">' + chuyenbay.diemdi + '</div>'+ 
+                        '<strong class="col-md-3 col-5">Điểm đến:</strong> ' + '<div class="col-md-9 col-7">' + chuyenbay.diemden + '</div>'+
+                        '<strong class="col-md-3 col-5">Số ghế:</strong> ' + '<div class="col-md-9 col-7">' + chuyenbay.soghe + '</div>'+
+                        '<strong class="col-md-3 col-5">Ngày đi:</strong> ' + '<div class="col-md-9 col-7">' + chuyenbay.ngaydi + '</div>';
+                        if (chuyenbay.chieu === "1") {
+                            item += '<strong class="col-md-3 col-5">Ngày về:</strong> ' + '<div class="col-md-9 col-7">' + chuyenbay.ngayve + '</div>';
+                        }
+                        item += '<strong class="col-md-3 col-5">Link ảnh:</strong> ' + '<div class="col-md-9 col-7 link-anh">' + chuyenbay.hinhanh + '</div>' +
+                        '</div>'+
+                        '<div class="mx-auto row col-md-2 col-12 align-items-center">'+
+                            '<button type="button" class="btn btn-warning col-md-12 mt-2" style="height: 60px;" onclick="suaChuyenBay(\'' + chuyenbay.id + '\')">Sửa</button>' +
+                            '<button type="button" class="btn btn-danger col-md-12 mt-2 mb-2" style="height: 60px;" onclick="xoaChuyenBay(\'' + chuyenbay.id + '\')">Xóa</button>' +
+                        '</div>'+
+                    '</div>';
+                    $('#danhSachChuyenBay').append(item);
+                });
+            });
+        }
+
+        function xoaChuyenBay(id) {
+            if (confirm("Bạn có chắc chắn muốn xóa chuyến bay này?")) {
+                $.ajax({
+                    url: 'http://localhost:3000/vemaybay/' + id,
+                    type: 'DELETE',
+                    success: function(response) {
+                        taiDanhSachChuyenBay();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Lỗi:', error);
+                        alert('Đã xảy ra lỗi khi xóa chuyến bay.');
+                    }
+                });
+            }
+        }
+
+        function suaChuyenBay(id) {
+            $.get("http://localhost:3000/vemaybay/" + id, function(data, status){
+                $('#tenchuyen').val(data.tenchuyen);
+                $('#chieu').val(data.chieu);
+                $('#diemdi').val(data.diemdi);
+                $('#diemden').val(data.diemden);
+                $('#soghe').val(data.soghe);
+                $('#ngaydi').val(data.ngaydi);
+                $('#ngayve').val(data.ngayve);
+                $('#hinhanh').val(data.hinhanh);
+            
+                if (data.chieu=== "1") {
+                    $('#divNgayVe').show();
+                } else {
+                    $('#divNgayVe').hide();
+                }
+                $('#btnGui').replaceWith('<button class="form-control btn btn-primary" id="btnCapNhat" onclick="capNhatChuyenBay(\'' + id + '\')">Cập nhật</button>');
+            });
+        }
+
+        function capNhatChuyenBay(id) {
+            var tenchuyen = $('#tenchuyen').val();
+            var chieu = $('#chieu').val();
+            var diemdi = $('#diemdi').val();
+            var diemden = $('#diemden').val();
+            var soghe = $('#soghe').val();
+            var hinhanh = $('#hinhanh').val();
+            var ngaydi = $('#ngaydi').val();
+            var ngayve = $('#ngayve').val();
+            if (!diemdi || !diemden || !soghe || !ngaydi || !tenchuyen) {
+                alert('Vui lòng nhập đầy đủ thông tin.');
+                return;
+            }
+
+            if (isNaN(soghe) || soghe <= 0) {
+                alert('Số ghế phải là số tự nhiên lớn hơn 0.');
+                return;
+            }
+            if (chieu === "1" && ngayve < ngaydi) {
+                alert('Ngày về không được trước ngày đi.');
+                return;
+            }
+            if (chieu === "0" && ngayve !== "") {
+                alert('Không thể chọn ngày về khi là một chiều.');
+                return;
+            }
+
+            var data = {
+                    tenchuyen: tenchuyen,
+                    chieu: chieu,
+                    diemdi: diemdi,
+                    diemden: diemden,
+                    soghe: soghe,
+                    ngaydi: ngaydi,
+                    ngayve: ngayve,
+                    hinhanh: hinhanh
+                };
+
+            $.ajax({
+                url: 'http://localhost:3000/vemaybay/' + id,
+                type: 'PUT',
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(response) {
+                    taiDanhSachChuyenBay(); 
+                    datLaiForm();
+                    $('#btnCapNhat').replaceWith('<button type="button" class="btn btn-primary col-md-12" id="btnGui">Đăng tin</button>');
+
+                },
+                error: function(xhr, status, error) {
+                    console.error('Lỗi:', error);
+                    alert('Đã xảy ra lỗi khi cập nhật chuyến bay.');
+                }
+            });
+        }
+
+        function datLaiForm() {
+            $('#chieu').val('0');
+            $('#tenchuyen').val('');
+            $('#diemdi').val('');
+            $('#diemden').val('');
+            $('#soghe').val('');
+            $('#ngaydi').val('');
+            $('#ngayve').val('');
+            $('#hinhanh').val('');
+            $('#divNgayVe').hide();
+        }
+        
+    </script>
+</body>
+</html>

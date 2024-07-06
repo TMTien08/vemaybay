@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNT End Like</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #menu {
+            background-color: rgb(31, 9, 62);
+             border-radius: 5px;
+             padding: 12px;
+        }
+        #menu a {
+            color: rgb(7, 36, 255);
+            text-align: center;
+            padding: 12px 14px;
+            text-decoration: none;
+            border: 1px solid rgb(7, 36, 255);
+            border-radius: 6px;
+            box-shadow: 1px 1px 6px rgb(7, 36, 255);
+            margin: 5px;
+        }
+        a:hover {
+            background-color: black;
+        }
+        #cacve2 {
+            width: 280px;
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            border-radius: 6px;
+            box-shadow: 1px 1px 6px rgb(50, 52, 61);
+        }
+        #cacve2 p {
+            margin: 5px 0;
+        }
+        .ve2 {
+            color: rgb(7, 36, 255);
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid rgb(7, 36, 255);
+            border-radius: 6px;
+            box-shadow: 1px 1px 6px rgb(7, 36, 255);
+            text-decoration: none;
+            display: none;
+        }
+        #cacve2:hover .ve2 {
+            display: block;
+        }
+        #de {
+            font-size:15px;
+            font-family:cursive;
+            color: rgb(96, 96, 102);
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="menu" class="col-md-9 col-12 d-flex flex-row flex-wrap mx-auto">
+                     <a href="tranhchu.html">Trang chủ</a>
+                     <a href="timve.html">Tìm vé</a>
+                     <a id="ql">Quản lý</a>
+                     <a href="vedadat.html">Thông tin vé đã đặt</a>
+            </div>
+        </div>
+        <div class="row">
+            <div id="de" class="col-md-9 col-12 d-flex flex-row flex-wrap mx-auto">
+                HNT End Like >> Thông tin vé đã đặt
+            </div>
+        </div>
+        <div class="row">
+            <div id="vedadat" class="col-md-9 col-9 d-flex flex-row flex-wrap justify-content-center mx-auto">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-12 p-0" style="height: 100px;">
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            function laygiatri2() {
+                $.get("http://localhost:3000/vemaybay2", function(data, status) {
+                    data.forEach(function(item) {
+                        var veHTML = '<div id="cacve2" style="background-image: url(' + item.hinhanh + ');">';
+                        veHTML += '<p><strong>Chuyến bay:</strong> ' + item.tenchuyen + '</p>';
+                        veHTML += '<p><strong>Chiều:</strong> ' + (item.chieu === "1" ? 'Khứ hồi' : 'Một chiều') + '</p>';
+                        veHTML += '<p><strong>Điểm đi:</strong> ' + item.diemdi + '</p>';
+                        veHTML += '<p><strong>Điểm đến:</strong> ' + item.diemden + '</p>';
+                        veHTML += '<p><strong>Ngày đi:</strong> ' + item.ngaydi + '</p>';
+                        if (item.chieu == "1") {
+                            veHTML += '<p><strong>Ngày về:</strong> ' + item.ngayve + '</p>';
+                        }
+                        veHTML += '<p><strong>Loại vé:</strong> ' + item.loaive + '</p>';
+                        veHTML += '<img style="width: 30%;" src="http://api.qrserver.com/v1/create-qr-code/?data= Chuyến bay:'+ item.tenchuyen +'// CCCD khách hàng: '+ item.cccd +'// Mã số chuyến bay: '+ item.id +'"/>';
+                        veHTML += '<a class="ve2 cancel" data-id="' + item.id + '" style="margin-top: ' + (item.chieu === "1" ? '25px' : '53px') + ';" href="#">Hủy chuyến</a>';
+                        veHTML += '<a class="ve2" href="#">Thanh Toán</a>';
+                        veHTML += '</div>';
+                        $('#vedadat').append(veHTML);
+                    });
+
+                    $('#vedadat').on('click', '.ve2.cancel', function(e) {
+                        e.preventDefault();
+                        var idve = $(this).data('id');
+                        var dieukien = prompt('Nếu muốn hủy chuyến vui lòng nhập đúng mã số định danh chuyến bay của bạn! Hãy quét QR để nhận được mã!');
+                        if (dieukien == idve) {
+                            $.ajax({
+                                url: 'http://localhost:3000/vemaybay2/' + idve,
+                                type: 'DELETE',
+                                success: function(result) {
+                                    alert('Đã xóa thành công');
+                                    $('#cacve2[data-id="' + idve + '"]').remove();
+                                },
+                                error: function(err) {
+                                    alert('Rất tiếc đã xảy ra lỗi');
+                                }
+                            });
+                        } else {
+                            alert('Bạn đã nhập sai yêu cầu đã bị hủy!');
+                        }
+                    });
+                });
+            }
+            laygiatri2();
+            $('#ql').click(function() {
+                var mk = prompt('hay nhap mat khau cho quan tri vien!');
+                if (mk=='namhuytien') {
+                    window.location.href = 'btl3.html';
+                }
+                else {
+                    alert('rat tiec ban truy cap khong thanh cong!')
+                }
+            });
+        });
+    </script>
+</body>
+</html>
