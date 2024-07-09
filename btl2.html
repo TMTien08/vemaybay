@@ -55,7 +55,7 @@
 <div class="container-fluid">
     <div class="row">
         <div id="menu" class="col-md-9 col-12 d-flex flex-row flex-wrap mx-auto">
-                 <a href="tranhchu.html">Trang chủ</a>
+                 <a href="index.html">Trang chủ</a>
                  <a href="timve.html">Tìm vé</a>
                  <a id="ql">Quản lý</a>
                  <a href="vedadat.html">Thông tin vé đã đặt</a>
@@ -152,6 +152,26 @@
     </div>
 </div>
 <script>
+     function docJSONtuGitHub() {
+        $.ajax({
+        url: 'https://raw.githubusercontent.com/NamdaKid/testJson/main/a.json',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            console.log(data);
+            // Xử lý dữ liệu từ JSON tại đây
+        },
+        error: function(error) {
+            console.log(error);
+            alert('Lỗi khi tải tệp JSON từ GitHub');
+        }
+    });
+}
+
+// Gọi hàm docJSONtuGitHub() khi trang được tải
+$(document).ready(function() {
+    docJSONtuGitHub();
+});
     $(document).ready(function() {
         $('#ql').click(function() {
                 var mk = prompt('hay nhap mat khau cho quan tri vien!');
